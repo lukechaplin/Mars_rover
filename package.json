@@ -1,0 +1,12 @@
+{
+  "name": "mars_rover",
+  "version": "1.0.0",
+  "description": "mars rover kata solution",
+  "main": "index.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
