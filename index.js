@@ -45,9 +45,10 @@ as each iteration executes it updates the state variable with the new heading an
 so it can be used by the next iteration*/
 const executeListOfCommands = (a, b, c) => {
   let state = { heading: b, coordinates: c };
+  let result = state;
   let array = a.split("");
   for (const command of array)
-    result = turnMoveRover(command, state.heading, state.coordinates);
+    result = turnMoveRover(command, result.heading, result.coordinates);
   return result;
 };
 
