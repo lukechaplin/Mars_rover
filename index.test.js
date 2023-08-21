@@ -216,8 +216,8 @@ describe("moving the rover", () => {
 
 //test rover taking multiple commands
 test("rover is able to take multiple commands", () => {
-  expect(executeListOfCommands("MMRMMRMRRM", "E", [3, 3])).toEqual({
-    heading: "E",
-    coordinates: [5, 1],
+  expect(executeListOfCommands("LMLMLMLMM", "N", [1, 2])).toEqual({
+    heading: "N",
+    coordinates: [1, 3],
   });
 });
