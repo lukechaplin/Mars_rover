@@ -47,11 +47,9 @@ const executeListOfCommands = (a, b, c) => {
   let state = { heading: b, coordinates: c };
   let result = state;
   let array = a.split("");
-  for (const command of array)
-    result = turnMoveRover(command, result.heading, result.coordinates);
+  for (let i = 0; i < array.length; i++)
+    result = turnMoveRover(array[i], result.heading, result.coordinates);
   return result;
 };
-
-executeListOfCommands("LMLMLMLMM", "N", [1, 2]);
 
 module.exports = { turnMoveRover, executeListOfCommands };
