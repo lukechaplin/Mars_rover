@@ -52,6 +52,45 @@ const executeListOfCommands = (a, b, c) => {
   return result;
 };
 
-executeListOfCommands("LMLMLMLMM", "N", [1, 2]);
+/*function that will take string with heading and coordinates in and transform into state
+that can be handled by turnMoveRover function within executeListOfCommands function*/
+const transformCoordinatesAndHeadingStringToState = (a) => {
+  const [x, y, z] = a.split("");
+  return { heading: z, coordinates: [+x, +y] };
+};
 
-module.exports = { turnMoveRover, executeListOfCommands };
+/*function that will convert state returned by executeListOfCommands function within 
+processCommandsAndCoordinatesAndHeadingString function into string*/
+const convertToStringReturnedStateOfProcessCommandsAndCoordinatesAndHeadingString =
+  (a) => {
+    return `${a.coordinates[0]}${a.coordinates[1]}${a.heading}`;
+  };
+
+/*function will take each set of string commmands and coordinates as part of an array that it will then process,
+the returned output will also be an array of string elements at the new coordinates and heading related to the relevant commands and coordionates from the first array*/
+const processCommandsAndCoordinatesAndHeadingString = (a) => {
+  let array = [];
+  while (a.length > 0) {
+    const [coordinatesAndHeading, commands] = [a.shift(), a.shift()];
+    let result1 = transformCoordinatesAndHeadingStringToState(
+      coordinatesAndHeading
+    );
+    let result2 = executeListOfCommands(
+      commands,
+      result1.heading,
+      result1.coordinates
+    );
+    array.push(
+      convertToStringReturnedStateOfProcessCommandsAndCoordinatesAndHeadingString(
+        result2
+      )
+    );
+  }
+  return array;
+};
+
+module.exports = {
+  turnMoveRover,
+  executeListOfCommands,
+  processCommandsAndCoordinatesAndHeadingString,
+};
