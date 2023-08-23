@@ -5,7 +5,7 @@ const {
 } = require("./index");
 
 //tests checking correct direction when rover turning left
-describe("rover turning left or right", () => {
+describe("rover turning left", () => {
   test("when facing north, turn left makes rover face west", () => {
     let testMoveCommand = "L";
     let testHeadingInput = "N";
