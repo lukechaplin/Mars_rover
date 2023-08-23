@@ -2,7 +2,7 @@
   "name": "mars_rover",
   "version": "1.0.0",
   "description": "mars rover kata solution",
-  "main": "index.test.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
