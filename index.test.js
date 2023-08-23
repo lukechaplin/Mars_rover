@@ -5,7 +5,7 @@ const {
 } = require("./index");
 
 //tests checking correct direction when rover turning left
-describe("rover turning left", () => {
+describe("rover turning left or right", () => {
   test("when facing north, turn left makes rover face west", () => {
     let testMoveCommand = "L";
     let testHeadingInput = "N";
@@ -227,7 +227,7 @@ test("rover is able to take multiple commands", () => {
 });
 
 //test able to process total rover test input
-test("rover us able to process complete test input", () => {
+test("rover is able to process complete test input", () => {
   let input = ["12N", "LMLMLMLMM", "33E", "MMRMMRMRRM"];
   expect(processCommandsAndCoordinatesAndHeadingString(input)).toEqual([
     "13N",
