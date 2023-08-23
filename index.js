@@ -52,22 +52,22 @@ const executeListOfCommands = (a, b, c) => {
   return result;
 };
 
-/*function that will take string with heading and coordinates in and transform into state
-that can be handled by turnMoveRover function within executeListOfCommands function*/
+/*function that will take input string with heading and coordinates in and transform into state
+that can be handled by turnMoveRover function nested within executeListOfCommands function*/
 const transformCoordinatesAndHeadingStringToState = (a) => {
   const [x, y, z] = a.split("");
   return { heading: z, coordinates: [+x, +y] };
 };
 
-/*function that will convert state returned by executeListOfCommands function within 
+/*function that will convert output state returned by executeListOfCommands function nested within 
 processCommandsAndCoordinatesAndHeadingString function into string*/
 const convertToStringReturnedStateOfProcessCommandsAndCoordinatesAndHeadingString =
   (a) => {
     return `${a.coordinates[0]}${a.coordinates[1]}${a.heading}`;
   };
 
-/*function will take each set of string commmands and coordinates as part of an array that it will then process,
-the returned output will also be an array of string elements at the new coordinates and heading related to the relevant commands and coordionates from the first array*/
+/*function will take each set of string commmands and coordinates as part of input array that it will then break down and process,
+the returned output will also be an array of string elements at the new coordinates and heading related to the relevant commands and coordionates from the first input array*/
 const processCommandsAndCoordinatesAndHeadingString = (a) => {
   let array = [];
   while (a.length > 0) {
