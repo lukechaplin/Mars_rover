@@ -11,7 +11,7 @@ Upon researching this - I learnt that the input needed to be handled as an array
 From this I then understood taking this array and transforming as required so that the direction/heading and coordinates could be seperated out and processed was needed, it then needed to be turned into an object (state) so the direcitons/heading and coordinates could be handled seperately as required in later functions.
 
 Further once inital functions were created to handle one direction/heading and coordinatoes, an additional function was needed to handle a series of directions/headings.
-This led to me realising that the previous outputs would be needed to be stored in state within the function (again an object) and then iterated on with the next direction given and update not only the direction but the coordinates given depending on the direction/heading passed into state previously on the previous iteration.
+This led to me realising that the previous outputs would be needed to be stored in state within the function (again an object) and then iterated on with the next direction given and update not only the direction but the coordinates given depending on the direction/heading passed into state on the previous iteration.
 
 In addition the output of the series of commands and directions/headings would need to be returned as a string - this meant a function to process the output into a string was needed.
 
@@ -22,6 +22,6 @@ Finally a function was needed that would take these looped outputs and push them
 
 ### Possible Additional Considerations
 
-*Could add in 55 string (relating to the 5x5 grid of the plateau) from test input in the future but can be removed as part of code before coordinates and headings/directions are processed.
-*Can update move and turn functions to throw errors if x, y coordinates exceed the value of 5 - as is 5x5 grid and ensure rovers stay on plateau.
-\*Security considerations - functions should be behind authentication and authorisation mechanisim so only authorised users can send commands to the rovers.
+* Could add in 55 string (relating to the 5x5 grid of the plateau) from test input in the future but can be removed as part of code before coordinates and headings/directions are processed.
+* Can update move and turn functions to throw errors if x, y coordinates exceed the value of 5 or if they return -1 as is 5x5 grid and ensure rovers stay on plateau.
+* Security considerations - functions should be behind authentication and authorisation mechanisim so only authorised users can send commands to the rovers.
