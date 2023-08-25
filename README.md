@@ -25,3 +25,4 @@ Finally a function was needed that would take these looped outputs and push them
 * Could add in 55 string (relating to the 5x5 grid of the plateau) from test input in the future but can be removed as part of code before coordinates and headings/directions are processed.
 * Can update move and turn functions to throw errors if x, y coordinates exceed the value of 5 or if they return -1 as is 5x5 grid and ensure rovers stay on plateau.
 * Security considerations - functions should be behind authentication and authorisation mechanisim so only authorised users can send commands to the rovers.
+* Add in logic check so that both rovers do not share the same coordinates i.e. avoid a crash
