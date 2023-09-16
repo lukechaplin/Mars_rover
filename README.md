@@ -2,7 +2,29 @@
 
 This is my solution to the mars rover kata using javascript and jest unit testing
 
-## Summary of solution
+## Installation and usage
+
+Please ensure you have installed jest using a suitable package manager like yarn or jest - this can be done locally or globally on your machine using yarn or npm
+
+npm set up
+
+local install: npm --save-dev jest
+global install: npm install jest --global
+
+yarn set up
+
+local install: yarn --save-dev jest
+global install: yarn global add jest
+
+To run any function in the index file please call it and pass in appropriate arguments into the function and run it using the node command:
+
+node index.js
+
+To run the test file invoke your package manager and use the test script comamnd followed by the test file name e.g.
+
+npm test index.test.js
+
+### Summary of solution
 
 Breaking down the problem to figure out how to best pass the test input was key.
 
@@ -20,9 +42,9 @@ This function meant that mutiple set of commands and heading and coordinates cou
 
 Finally a function was needed that would take these looped outputs and push them into a new array so it matched the test output given in the kata - this output would be passed to the function that turns the outputs into a string as part of the push to the array (consumed by push method).
 
-### Possible Additional Considerations
+#### Possible Additional Considerations
 
-* Could add in 55 string (relating to the 5x5 grid of the plateau) from test input in the future but can be removed as part of code before coordinates and headings/directions are processed.
-* Can update move and turn functions to throw errors if x, y coordinates exceed the value of 5 or if they return -1 as is 5x5 grid and ensure rovers stay on plateau.
-* Security considerations - functions should be behind authentication and authorisation mechanisim so only authorised users can send commands to the rovers.
-* Add in logic check so that both rovers do not share the same coordinates i.e. avoid a crash
+- Could add in 55 string (relating to the 5x5 grid of the plateau) from test input in the future but can be removed as part of code before coordinates and headings/directions are processed.
+- Can update move and turn functions to throw errors if x, y coordinates exceed the value of 5 or if they return -1 as is 5x5 grid and ensure rovers stay on plateau.
+- Security considerations - functions should be behind authentication and authorisation mechanisim so only authorised users can send commands to the rovers.
+- Add in logic check so that both rovers do not share the same coordinates i.e. avoid a crash
